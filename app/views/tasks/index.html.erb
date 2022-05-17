@@ -1,0 +1,12 @@
+<div class="list">
+  <h2>ToDo List</h2>
+  <ul>
+  <% @tasks.each do |task| %>
+    <li>
+        <p><%= link_to task.title, task_path(task.id) %>
+        <p><%= task.completed == true ? "Fait" : "A faire" %></p>
+    </li>
+    <% end %>
+  </ul>
+  <%= link_to "Add task", tasks_new_path,id:"add-but", class:"btn btn-primary"%>
+</div>
